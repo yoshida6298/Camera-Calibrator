@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [project.scripts]
-hsr_mlops = "camera_calibrator.camera_calibrator:main"
+camera_calibrator = "camera_calibrator.camera_calibrator:main"
 
 [project.urls]
 Homepage = "https://github.com/yoshida6298/Camera-Calibrator"
