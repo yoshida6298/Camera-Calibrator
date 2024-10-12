@@ -44,8 +44,8 @@ def main():
     step_num = int(questionary.text("動画の分割単位を指定してください[フレーム]", default="10").ask())
     checker_size = float(questionary.text("チェッカーボード１マスの大きさを指定してください[mm]", default="24.0").ask())
 
+    print("キャリブレーション開始")
     with tempfile.TemporaryDirectory() as temp_dir:
-        print(temp_dir)
         clip_all_frames(str(file_path), temp_dir, step_num)
         checker_calibration(temp_dir, output_dir, checker_size)
 
