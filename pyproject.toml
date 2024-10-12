@@ -15,6 +15,13 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "opencv-python",
+    "tqdm",
+    "numpy",
+    "requests",
+    "questionary",
+]
 
 [project.scripts]
 camera_calibrator = "camera_calibrator.camera_calibrator:main"

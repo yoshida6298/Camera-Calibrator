@@ -1,3 +1,5 @@
 opencv-python
 tqdm
 numpy
+requests
+questionary

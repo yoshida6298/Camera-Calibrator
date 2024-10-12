@@ -5,7 +5,7 @@ import argparse
 import os
 
 
-def checker_calibration(input_dir, checker_size=24.0):
+def checker_calibration(input_dir, output_dir, checker_size=24.0):
     extensions = ['jpg', 'jpeg', 'JPG', 'JPEG', 'png']
     image_paths = []
     for extension in extensions:
@@ -39,18 +39,21 @@ def checker_calibration(input_dir, checker_size=24.0):
     cv2.destroyAllWindows()
 
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(object_points, image_points, gray.shape[::-1], None, None)
-    print("!!!!!!")
+    print("キャリブレーション終了")
+    np.set_printoptions(precision=5, suppress=True)
     print(dist)
+    np.savetxt(str(output_dir / "dist.txt"), dist, fmt='%.5f')
     np.set_printoptions(precision=2, suppress=True)
     print(mtx)
+    np.savetxt(str(output_dir / "mtx.txt"), mtx, fmt='%.2f')
 
 
-def main():
-    parser = argparse.ArgumentParser('カメラのキャリブレーション')
-    parser.add_argument('input_dir', help='入力画像のディレクトリ')
-    args = parser.parse_args()
-    checker_calibration(args.input_dir)
-
-
-if __name__ == '__main__':
-    main()
+# def main():
+#     parser = argparse.ArgumentParser('カメラのキャリブレーション')
+#     parser.add_argument('input_dir', help='入力画像のディレクトリ')
+#     args = parser.parse_args()
+#     checker_calibration(args.input_dir)
+#
+#
+# if __name__ == '__main__':
+#     main()

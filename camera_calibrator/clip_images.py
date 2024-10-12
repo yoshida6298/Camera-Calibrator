@@ -42,14 +42,14 @@ def clip_all_frames(video_path, output_dir, step, ext='jpg'):
                 return
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('input_path', help='Input movie path')
-    parser.add_argument('--output_dir', default="")
-    parser.add_argument('--step', default=1, type=int)
-    args = parser.parse_args()
-    clip_all_frames(args.input_path, args.output_dir,  args.step)
-
-
-if __name__ == "__main__":
-    main()
+# def main():
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument('input_path', help='Input movie path')
+#     parser.add_argument('--output_dir', default="")
+#     parser.add_argument('--step', default=1, type=int)
+#     args = parser.parse_args()
+#     clip_all_frames(args.input_path, args.output_dir,  args.step)
+#
+#
+# if __name__ == "__main__":
+#     main()
