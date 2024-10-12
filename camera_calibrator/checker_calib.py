@@ -40,14 +40,14 @@ def checker_calibration(input_dir, output_dir, checker_size=24.0):
 
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(object_points, image_points, gray.shape[::-1], None, None)
     print("キャリブレーション終了")
-    np.set_printoptions(precision=5, suppress=True)
+    np.set_printoptions(precision=6, suppress=True)
     print(dist)
-    np.savetxt(str(output_dir / "dist.txt"), dist, fmt='%.5f')
-    print(f'{str(output_dir / "dist.txt")}を保存しました')
+    np.savetxt(str(output_dir / "distortion.txt"), dist, fmt='%.6f')
+    print(f'{str(output_dir / "distortion.txt")}を保存しました')
     np.set_printoptions(precision=2, suppress=True)
     print(mtx)
-    np.savetxt(str(output_dir / "mtx.txt"), mtx, fmt='%.2f')
-    print(f'{str(output_dir / "mtx.txt")}を保存しました')
+    np.savetxt(str(output_dir / "intrinsics.txt"), mtx, fmt='%.2f')
+    print(f'{str(output_dir / "intrinsics.txt")}を保存しました')
 
 
 # def main():
