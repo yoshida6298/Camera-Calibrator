@@ -2,8 +2,8 @@ import sys
 from pathlib import Path
 import requests
 import questionary
-from clip_images import clip_all_frames
-from checker_calib import checker_calibration
+from .clip_images import clip_all_frames
+from .checker_calib import checker_calibration
 import tempfile
 
 
