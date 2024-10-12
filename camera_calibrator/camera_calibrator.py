@@ -14,6 +14,7 @@ def get_checker_pdf():
     with open(file_path, mode='wb') as f:
         f.write(data)
     print("ダウンロードフォルダにダウンロードされました")
+    print("チェッカーボードを印刷し、縦向きで動画を撮影してください")
 
 
 def main():
